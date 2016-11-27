@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<title>Lista</title>
+</head>
+<body>
+
+	<h1>Listagem de Clubes</h1>
+	<h3>
+		<a href="../index.jsf">Home</a>
+	</h3>
+
+	<h:form>
+
+		<h:panelGrid columns="2">
+			<table>
+				<tr>
+					<td>Id</td>
+					<td>Nome</td>
+					<td>Abreviação</td>
+					<td>Posição</td>
+					<td>Escudo_Id</td>
+				</tr>
+
+				<ui:repeat var="item" value="#{clubeController.clubes}">
+
+					<tr>
+						<td>#{item.id}</td>
+						<td>#{item.nome}</td>
+						<td>#{item.abreviacao}</td>
+						<td>#{item.posicao}</td>
+						<td>#{item.escudo_id.id}</td>
+
+						<td><h:commandButton action="#{clubeController.editar(item)}"
+								value="Editar" /> <h:commandButton
+								action="#{clubeController.excluir(item)}" value="Excluir" /></td>
+					</tr>
+
+				</ui:repeat>
+
+				<h:commandButton action="#{clubeController.adicionar()}"
+					value="Adicionar" />
+
+			</table>
+		</h:panelGrid>
+	</h:form>
+
+</body>
+</html>

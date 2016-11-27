@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<title>Novo</title>
+</head>
+<body>
+	<h1>Novo Atleta</h1>
+
+	<h:form>
+		<h:panelGrid columns="2">
+
+			<h:outputLabel value="Nome do Atleta" for="nomeAtleta" />
+			<h:inputText id="nomeAtleta" value="#{atletaController.atleta.nome}" />
+			<h:outputLabel value="Apelido do Atleta" for="apelidoAtleta" />
+			<h:inputText id="apelidoAtleta"
+				value="#{atletaController.atleta.apelido}" />
+			<h:outputLabel value="Foto do Atleta" for="fotoAtleta" />
+			<h:inputText id="fotoAtleta" value="#{atletaController.atleta.foto}" />
+			<h:outputLabel value="Preço do Atleta" for="precoAtleta" />
+			<h:inputText id="precoAtleta"
+				value="#{atletaController.atleta.preco_editorial}" />
+
+			<h:commandButton action="#{atletaController.salvar}"
+				value="Salvar" />
+			<h:commandButton action="#{atletaController.cancelar}"
+				value="Cancelar" />
+
+		</h:panelGrid>
+
+	</h:form>
+
+
+</body>
+</html>
+

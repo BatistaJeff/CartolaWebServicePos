@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<title>Novo</title>
+</head>
+<body>
+	<h1>Novo Fechamento</h1>
+
+	<h:form>
+		<h:panelGrid columns="2">
+
+			<h:outputLabel value="Id do Fechamento" for="idFechamento" />
+			<h:inputText disabled="true" id="idFechamento"
+				value="#{fechamentoController.fechamento.id}" />
+			<h:outputLabel value="Dia do fechamento" for="diaFechamento" />
+			<h:inputText id="diaFechamento"
+				value="#{fechamentoController.fechamento.dia}" />
+			<h:outputLabel value="Mes do Fechamento" for="mesFechamento" />
+			<h:inputText id="mesFechamento"
+				value="#{fechamentoController.fechamento.mes}" />
+			<h:outputLabel value="Ano do Fechamento" for="anoFechamento" />
+			<h:inputText id="anoFechamento"
+				value="#{fechamentoController.fechamento.ano}" />
+
+			<h:outputLabel value="Hora do Fechamento" for="horaFechamento" />
+			<h:inputText id="horaFechamento"
+				value="#{fechamentoController.fechamento.hora}" />
+			<h:outputLabel value="Minuto do Fechamento" for="minutoFechamento" />
+			<h:inputText id="minutoFechamento"
+				value="#{fechamentoController.fechamento.minuto}" />
+			<h:outputLabel value="Timestamp do Fechamento"
+				for="timestampFechamento" />
+			<h:inputText id="timestampFechamento"
+				value="#{fechamentoController.fechamento.timestamp}" />
+
+
+
+			<h:commandButton action="#{fechamentoController.salvar}"
+				value="Salvar" />
+			<h:commandButton action="#{fechamentoController.cancelar}"
+				value="Cancelar" />
+
+		</h:panelGrid>
+
+	</h:form>
+
+
+</body>
+</html>
+

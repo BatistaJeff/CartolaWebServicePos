@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<title>Edição</title>
+</head>
+<body>
+	<h1>Edição do Status</h1>
+
+
+	<h:form>
+		<h:messages id="messages" showDetail="true" autoUpdate="true"
+			closable="true" />
+		<h:panelGrid columns="2">
+
+			<h:outputLabel value="Rodada Atual" for="rodadaStatus" />
+			<h:inputText id="rodadaStatus" disabled="true"
+				value="#{statusController.status.rodada_atual}" />
+			<h:outputLabel value="Status Mercado" for="statusMercado" />
+			<h:inputText id="statusMercado"
+				value="#{statusController.status.status_mercado}" />
+			<h:outputLabel value="Esquema Default Id" for="esquemaDefaultId" />
+			<h:inputText id="esquemaDefaultId"
+				value="#{statusController.status.esquema_default_id}" />
+			<h:outputLabel value="Cartoleta Inicial" for="cartoletaInicial" />
+			<h:inputText id="cartoletaInicial"
+				value="#{statusController.status.cartoleta_inicial}" />
+
+			<h:outputLabel value="Max Ligas Free" for="ligasFree" />
+			<h:inputText id="ligasFree"
+				value="#{statusController.status.max_ligas_free}" />
+			<h:outputLabel value="Max Ligas Pro" for="ligasPro" />
+			<h:inputText id="ligasPro"
+				value="#{statusController.status.max_ligas_pro}" />
+
+			<h:outputLabel value="Max Ligas Mamata Free" for="ligasMamataFree" />
+			<h:inputText id="ligasMamataFree"
+				value="#{statusController.status.max_ligas_matamata_free}" />
+			<h:outputLabel value="Max Ligas Mamata Pro" for="ligasMamataPro" />
+			<h:inputText id="ligasMamataPro"
+				value="#{statusController.status.max_ligas_matamata_pro}" />
+			<h:outputLabel value="Max Ligas Patrocinadas Free"
+				for="ligasPatrocinadasFree" />
+			<h:inputText id="ligasPatrocinadasFree"
+				value="#{statusController.status.max_ligas_patrocinadas_free}" />
+			<h:outputLabel value="Max Ligas Patrocinadas Pro"
+				for="ligasPatrocinadasPro" />
+			<h:inputText id="ligasPatrocinadasPro"
+				value="#{statusController.status.max_ligas_patrocinadas_pro_num}" />
+			<h:outputLabel value="Game Over" for="gameOver" />
+			<h:inputText id="gameOver"
+				value="#{statusController.status.game_over}" />
+			<h:outputLabel value="Times Escalados" for="timesEscalados" />
+			<h:inputText id="timesEscalados"
+				value="#{statusController.status.times_escalados}" />
+			<h:outputLabel value="Mercado Pos Rodada" for="mercadoPosRodada" />
+			<h:inputText id="mercadoPosRodada"
+				value="#{statusController.status.mercado_pos_rodada}" />
+			<h:outputLabel value="Aviso" for="aviso" />
+			<h:inputText id="aviso" value="#{statusController.status.aviso}" />
+			<h:outputLabel value="Id Fechamento" for="idFechamento" />
+			<h:inputText id="idFechamento"
+				value="#{statusController.status.fechamento.id}" disabled="true" />
+
+			<h:commandButton action="#{destaqueController.atualizar}"
+				value="Atualizar" />
+			<h:commandButton action="#{destaqueController.cancelar}"
+				value="Cancelar" />
+
+		</h:panelGrid>
+
+
+	</h:form>
+
+</body>
+</html>

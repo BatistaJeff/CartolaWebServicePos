@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<title>Lista</title>
+</head>
+<body>
+
+	<h1>Listagem de Status</h1>
+	<h3>
+		<a href="../index.jsf">Home</a>
+	</h3>
+
+	<h:form>
+
+		<h:panelGrid columns="2">
+			<table>
+				<tr>
+					<td>Rodada Atual</td>
+					<td>Status Mercado</td>
+					<td>Esquema Default Id</td>
+					<td>Cartoleta Inicial</td>
+					<td>Max Ligas Free</td>
+					<td>Max Ligas Pro</td>
+					<td>Max Ligas Mamata Free</td>
+					<td>Max Ligas Mamata Pro</td>
+					<td>Max Ligas Patrocinadas Free</td>
+					<td>Max Ligas Patrocinadas Pro Num</td>
+					<td>Game Over</td>
+					<td>Times Escalados</td>
+					<td>Mercados Pos Rodada</td>
+					<td>Aviso</td>
+					<td>Fechamento Id</td>
+				</tr>
+
+				<ui:repeat var="item" value="#{statusController.statusList}">
+
+					<tr>
+						<td>#{item.rodada_atual}</td>
+						<td>#{item.status_mercado}</td>
+						<td>#{item.esquema_default_id}</td>
+						<td>#{item.cartoleta_inicial}</td>
+						<td>#{item.max_ligas_free}</td>
+						<td>#{item.max_ligas_pro}</td>
+						<td>#{item.max_ligas_matamata_free}</td>
+						<td>#{item.max_ligas_matamata_pro}</td>
+						<td>#{item.max_ligas_patrocinadas_free}</td>
+						<td>#{item.max_ligas_patrocinadas_pro_num}</td>
+						<td>#{item.game_over}</td>
+						<td>#{item.times_escalados}</td>
+						<td>#{item.mercado_pos_rodada}</td>
+						<td>#{item.aviso}</td>
+						<td>#{item.fechamento.id}</td>
+
+						<td><h:commandButton
+								action="#{statusController.editar(item)}" value="Editar" /> <h:commandButton
+								action="#{statusController.excluir(item)}" value="Excluir" /></td>
+					</tr>
+
+				</ui:repeat>
+
+				<h:commandButton action="#{statusController.adicionar()}"
+					value="Adicionar" />
+
+			</table>
+		</h:panelGrid>
+	</h:form>
+
+</body>
+</html>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<title>Edição</title>
+</head>
+<body>
+	<h1>Edição do Clube</h1>
+
+
+	<h:form>
+		<h:panelGrid columns="2">
+
+			<h:outputLabel value="Id do Clube" for="idClube" />
+			<h:inputText disabled="true" id="idClube"
+				value="#{clubeController.clube.id}" />
+			<h:outputLabel value="Nome do Clube" for="nomeClube" />
+			<h:inputText id="nomeClube" value="#{clubeController.clube.nome}" />
+			<h:outputLabel value="Abreviação do Clube" for="abreviacaoClube" />
+			<h:inputText id="abreviacaoClube"
+				value="#{clubeController.clube.abreviacao}" />
+			<h:outputLabel value="Posição do Clube" for="posicaoClube" />
+			<h:inputText id="posicaoClube"
+				value="#{clubeController.clube.posicao}" />
+			<h:outputLabel value="Id Escudo do Clube" for="idEscudoClube" />
+			<h:inputText disabled="true" id="idEscudoClube"
+				value="#{clubeController.clube.escudo_id.id}" />
+
+			<h:commandButton action="#{clubeController.atualizar}"
+				value="Atualizar" />
+			<h:commandButton action="#{clubeController.cancelar}"
+				value="Cancelar" />
+
+		</h:panelGrid>
+
+
+	</h:form>
+
+</body>
+</html>
